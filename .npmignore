@@ -1,0 +1,21 @@
+## editors
+/.idea
+/.vscode
+
+## system files
+.DS_Store
+
+# code coverage folders
+/coverage
+/.nyc_output
+
+## npm
+node_modules
+npm-debug.log
+
+## temp folders
+/.tmp/
+
+## build output
+/dist
+build-stats.json

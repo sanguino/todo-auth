@@ -9,7 +9,7 @@
     "test": "mocha test/**/*.js --require esm",
     "coverage": "nyc npm run test",
     "debug": "DEBUG=* npm run start",
-    "start": "MONGO_HOST=127.0.0.1 MONGO_PORT=27017 MONGO_DB=tasksDB SUPER_SECRET=pass TOKEN_EXPIRATION=1 node start.js"
+    "start": "MONGO_HOST=127.0.0.1 MONGO_PORT=27017 MONGO_DB=tasksDB SUPER_SECRET=pass TOKEN_EXPIRATION=86400 node start.js"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.0.0",

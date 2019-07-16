@@ -6,10 +6,10 @@
     "format:prettier": "prettier \"**/*.js\" --write",
     "lint": "npm run lint:eslint && npm run lint:prettier",
     "format": "npm run format:eslint && npm run format:prettier",
-    "test": "mocha test/*.js --require esm",
+    "test": "mocha test/**/*.js --require esm",
     "coverage": "nyc npm run test",
-    "debug": "DEBUG=* node start.js",
-    "start": "node start.js"
+    "debug": "DEBUG=* npm run start",
+    "start": "MONGO_HOST=127.0.0.1 MONGO_PORT=27017 MONGO_DB=tasksDB SUPER_SECRET=pass TOKEN_EXPIRATION=1 node start.js"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.0.0",
@@ -18,13 +18,15 @@
     "chai-http": "^4.3.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-import": "^2.18.0",
     "husky": "^3.0.0",
     "lint-staged": "^9.1.0",
     "mocha": "^6.1.4",
     "nyc": "^14.1.1",
     "prettier": "^1.18.2",
-    "sinon": "^7.3.2"
+    "sinon": "^7.3.2",
+    "targs": "^0.1.4"
   },
   "lint-staged": {
     "*.js": [
@@ -35,7 +37,7 @@
   },
   "name": "todo-auth",
   "version": "1.0.0",
-  "description": "Auth api for todo-app",
+  "description": "Auth Api for todo-app",
   "main": "start.js",
   "repository": {
     "type": "git",
@@ -48,10 +50,16 @@
   },
   "homepage": "https://github.com/sanguino/todo-auth#readme",
   "dependencies": {
-    "cookie-parser": "~1.4.4",
+    "@hapi/boom": "^7.4.2",
+    "@hapi/joi": "^15.1.0",
+    "body-parser": "^1.19.0",
+    "chai-as-promised": "^7.1.1",
+    "cookie-parser": "^1.4.4",
     "debug": "~2.6.9",
     "esm": "^3.2.25",
     "express": "~4.16.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.2.7",
     "morgan": "~1.9.1"
   }
 }

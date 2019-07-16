@@ -5,9 +5,9 @@ import app from '../lib/app';
 chai.use(chaiHttp);
 chai.should();
 
-describe('Things', () => {
+describe.skip('Integration test, to be done', () => {
   describe('GET /', () => {
-    it('should get all things record', done => {
+    it('should get tasks', done => {
       chai
         .request(app)
         .get('/')

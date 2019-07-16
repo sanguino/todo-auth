@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+
+  mongo:
+    image: todo-mongo
+    ports:
+      - 27017:27017
+
+  mongo-admin:
+    image: mrvautin/adminmongo
+    ports:
+      - 1234:1234
+    environment:
+      - HOST=0.0.0.0
+      - PORT=1234

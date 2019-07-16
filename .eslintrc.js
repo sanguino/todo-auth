@@ -1,4 +1,5 @@
 module.exports = {
+  extends: ['eslint-config-prettier'],
   env: {
     es6: true,
     node: true,
@@ -14,6 +15,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    'implicit-arrow-linebreak': 'off',
     'import/no-extraneous-dependencies': [
       'error',
       {
